@@ -16,7 +16,9 @@ Nrecurrence : N { // Abstract superclass for cached sequences like recurrence re
 
 	at { |i|
 		cache [i] ?? {
-			if (i >= cache.size) { cache = cache.growClear (cache.size + 0x10000); };
+			if (i >= cache.size) {
+				cache = cache.growClear (cache.size + 0x10000);
+			};
 			cache [i] = this.calculate (i);
 		};
 		^ cache [i];
